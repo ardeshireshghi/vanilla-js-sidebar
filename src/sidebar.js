@@ -16,13 +16,14 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.SidebarDirection = void 0;
     var SidebarDirection;
     (function (SidebarDirection) {
         SidebarDirection["LEFT"] = "left";
         SidebarDirection["RIGHT"] = "right";
         SidebarDirection["BOTTOM"] = "bottom";
         SidebarDirection["TOP"] = "top";
-    })(SidebarDirection || (SidebarDirection = {}));
+    })(SidebarDirection = exports.SidebarDirection || (exports.SidebarDirection = {}));
     const ClassNames = {
         SIDEBAR: 'js-sidebar',
         SIDEBAR_PANEL_JS: 'js-sidebar__panel',

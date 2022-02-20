@@ -2,7 +2,7 @@
  * Sidebar UI component
  */
 /// <reference types="node" />
-declare enum SidebarDirection {
+export declare enum SidebarDirection {
     LEFT = "left",
     RIGHT = "right",
     BOTTOM = "bottom",
@@ -10,10 +10,10 @@ declare enum SidebarDirection {
 }
 declare type SidebarPanelStyles = CSSStyleDeclaration | Record<string, CSSStyleDeclaration>;
 declare type SidebarInitParam = {
-    direction: SidebarDirection;
-    customClassName: string;
+    direction?: SidebarDirection;
+    customClassName?: string;
     panelStyles: SidebarPanelStyles;
-    overlayBackgroundColor: string;
+    overlayBackgroundColor?: string;
     onShow?(): void;
     onHide?(): void;
 };

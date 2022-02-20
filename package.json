@@ -1,6 +1,6 @@
 {
   "name": "@eardi/vanilla-js-sidebar",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "main": "src/sidebar.js",
   "repository": "ardeshireshghi/vanilla-js-sidebar",
   "license": "MIT",
@@ -10,9 +10,14 @@
     "serve-example": "yarn build && webpack-dev-server"
   },
   "devDependencies": {
+    "@types/react": "^17.0.39",
+    "react": "^17.0.2",
     "typescript": "^4.5.5",
     "webpack": "^5.69.1",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.7.4"
+  },
+  "peerDependencies": {
+    "react": "17.x"
   }
 }
