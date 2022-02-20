@@ -6,7 +6,7 @@ A simple sidebar component
 
 ## Install
 
-`react-scroll-tab` requires Node.js version 12
+`vanilla-js-sidebar` requires Node.js version 12
 
 ```bash
 # npm
