@@ -4,6 +4,11 @@
 
 import createStyles from './styles';
 
+declare global {
+  interface Window {
+    Sidebar;
+  }
+}
 enum SidebarDirection {
   LEFT = 'left',
   RIGHT = 'right',
@@ -375,6 +380,10 @@ function insertCustomStyles(
       }
     }
   );
+}
+
+if (window) {
+  window.Sidebar = Sidebar;
 }
 
 export default Sidebar;
