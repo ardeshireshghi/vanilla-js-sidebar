@@ -17,6 +17,8 @@ type SidebarInitParam = {
   customClassName: string;
   panelStyles: SidebarPanelStyles;
   overlayBackgroundColor: string;
+  onShow?(): void;
+  onHide?(): void;
 };
 
 type Position = {
@@ -63,6 +65,8 @@ class Sidebar {
   protected state: SidebarState;
   protected id: SidebarId;
   protected touchMoveDebounceTimeout: NodeJS.Timeout | undefined;
+  protected onShow: () => void | undefined;
+  protected onHide: () => void | undefined;
 
   constructor(initialParam?: SidebarInitParam) {
     const { direction, customClassName, panelStyles, overlayBackgroundColor } =
@@ -74,6 +78,9 @@ class Sidebar {
     this.customClassName = customClassName;
     this.panelStyles = panelStyles;
     this.overlayBackgroundColor = overlayBackgroundColor;
+
+    this.onShow = initialParam?.onShow ? initialParam?.onShow : () => {};
+    this.onHide = initialParam?.onHide ? initialParam?.onHide : () => {};
 
     this.state = {
       templateRendered: false,
@@ -128,6 +135,8 @@ class Sidebar {
     this._updateState({
       isShown: true
     });
+
+    this.onShow();
   }
 
   hide() {
@@ -159,6 +168,8 @@ class Sidebar {
     this._updateState({
       isShown: false
     });
+
+    this.onHide();
   }
   _handleTouchStart(e: TouchEvent) {
     this._updateState({

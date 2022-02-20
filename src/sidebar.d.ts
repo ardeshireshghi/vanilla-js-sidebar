@@ -14,6 +14,8 @@ declare type SidebarInitParam = {
     customClassName: string;
     panelStyles: SidebarPanelStyles;
     overlayBackgroundColor: string;
+    onShow?(): void;
+    onHide?(): void;
 };
 declare type Position = {
     x: number;
@@ -36,6 +38,8 @@ declare class Sidebar {
     protected state: SidebarState;
     protected id: SidebarId;
     protected touchMoveDebounceTimeout: NodeJS.Timeout | undefined;
+    protected onShow: () => void | undefined;
+    protected onHide: () => void | undefined;
     constructor(initialParam?: SidebarInitParam);
     static get direction(): typeof SidebarDirection;
     renderContent(elOrHTMLOrCollection: HTMLElement | HTMLCollection | string): void;

@@ -47,6 +47,8 @@
             this.customClassName = customClassName;
             this.panelStyles = panelStyles;
             this.overlayBackgroundColor = overlayBackgroundColor;
+            this.onShow = (initialParam === null || initialParam === void 0 ? void 0 : initialParam.onShow) ? initialParam === null || initialParam === void 0 ? void 0 : initialParam.onShow : () => { };
+            this.onHide = (initialParam === null || initialParam === void 0 ? void 0 : initialParam.onHide) ? initialParam === null || initialParam === void 0 ? void 0 : initialParam.onHide : () => { };
             this.state = {
                 templateRendered: false,
                 isShown: false
@@ -89,6 +91,7 @@
             this._updateState({
                 isShown: true
             });
+            this.onShow();
         }
         hide() {
             if (!this.state.isShown) {
@@ -107,6 +110,7 @@
             this._updateState({
                 isShown: false
             });
+            this.onHide();
         }
         _handleTouchStart(e) {
             this._updateState({
