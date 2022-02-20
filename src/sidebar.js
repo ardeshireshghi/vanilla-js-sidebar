@@ -257,5 +257,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
             }
         });
     }
+    if (window) {
+        window.Sidebar = Sidebar;
+    }
     exports.default = Sidebar;
 });

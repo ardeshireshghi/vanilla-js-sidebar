@@ -6,7 +6,7 @@ import createStyles from './styles';
 
 declare global {
   interface Window {
-    Sidebar;
+    Sidebar: typeof Sidebar;
   }
 }
 enum SidebarDirection {

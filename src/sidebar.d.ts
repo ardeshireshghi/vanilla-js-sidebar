@@ -2,6 +2,11 @@
  * Sidebar UI component
  */
 /// <reference types="node" />
+declare global {
+    interface Window {
+        Sidebar: typeof Sidebar;
+    }
+}
 declare enum SidebarDirection {
     LEFT = "left",
     RIGHT = "right",
