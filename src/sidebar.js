@@ -259,17 +259,21 @@
     }
     function createStyles(id, sidebarOverlayBackgroundColor) {
         return `
-#${id}.sidebar {
+
+.sidebar {
   position: fixed;
   z-index: 2000;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: ${sidebarOverlayBackgroundColor};
   transition: opacity 0.25s;
   animation: fadeIn 0.25s;
   animation-fill-mode: forwards;
+}
+
+#${id}.sidebar {
+  background-color: ${sidebarOverlayBackgroundColor};
 }
 
 .sidebar--hidden {
