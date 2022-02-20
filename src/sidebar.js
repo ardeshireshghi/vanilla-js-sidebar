@@ -51,7 +51,7 @@
                 templateRendered: false,
                 isShown: false
             };
-            this.id = `sidebar-panel-${Math.round(Math.random() * 10000000)}`;
+            this.id = `sidebar-${Math.round(Math.random() * 10000000)}`;
             this._insertStyles();
             this._renderTemplate();
         }
@@ -158,7 +158,7 @@
             wrapper.innerHTML = this.template;
             const sidebarEl = wrapper.querySelector(`.${ClassNames.SIDEBAR}`);
             const sidebarPanelEl = wrapper.querySelector(`.${ClassNames.SIDEBAR_PANEL_JS}`);
-            sidebarPanelEl.id = this.id;
+            sidebarPanelEl.id = this.id + '-panel';
             sidebarEl.id = this.id;
             sidebarPanelEl.classList.add(`${ClassNames.SIDEBAR_PANEL}--${this.direction}`);
             // Adds custom class name to the panel
@@ -280,7 +280,7 @@
   animation: fadeOut 0.25s;
 }
 
-#${id}.sidebar__panel {
+#${id}-panel.sidebar__panel {
   background-color: white;
   position: absolute;
   box-shadow: rgb(67 90 111 / 30%) 0px 0px 1px,
