@@ -1,13 +1,13 @@
 {
   "name": "@eardi/vanilla-js-sidebar",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "main": "src/sidebar.js",
   "repository": "ardeshireshghi/vanilla-js-sidebar",
   "license": "MIT",
   "scripts": {
-    "build": "tsc -d",
+    "build": "tsc -d && ./scripts/fix-browser-export.js",
     "build-example": "webpack",
-    "serve-example": "tsc -d && webpack-dev-server"
+    "serve-example": "yarn build && webpack-dev-server"
   },
   "devDependencies": {
     "typescript": "^4.5.5",
