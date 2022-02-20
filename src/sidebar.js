@@ -186,7 +186,7 @@
             }
         }
         _insertPanelCustomStyles() {
-            insertCustomStyles(`#${this.id}.${ClassNames.SIDEBAR_PANEL}`, this.panelStyles);
+            insertCustomStyles(`#${this.id}-panel.${ClassNames.SIDEBAR_PANEL}`, this.panelStyles);
         }
         _bindEvents() {
             const { sidebarEl, sidebarPanelEl } = this.state;

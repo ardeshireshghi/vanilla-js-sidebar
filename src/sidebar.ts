@@ -265,7 +265,7 @@ class Sidebar {
 
   _insertPanelCustomStyles() {
     insertCustomStyles(
-      `#${this.id}.${ClassNames.SIDEBAR_PANEL}`,
+      `#${this.id}-panel.${ClassNames.SIDEBAR_PANEL}`,
       this.panelStyles
     );
   }
