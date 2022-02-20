@@ -154,7 +154,7 @@ class Sidebar {
     );
 
     sidebarEl?.classList.add(ClassNames.SIDEBAR_HIDING);
-    sidebarEl?.addEventListener(
+    sidebarPanelEl?.addEventListener(
       'animationend',
       () => {
         sidebarEl?.classList.add(ClassNames.SIDEBAR_HIDDEN);

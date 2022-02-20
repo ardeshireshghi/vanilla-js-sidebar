@@ -102,7 +102,7 @@
             sidebarPanelEl === null || sidebarPanelEl === void 0 ? void 0 : sidebarPanelEl.classList.add(`${ClassNames.SIDEBAR_PANEL_BASE_ANIMATION_OUT}--${this.direction}`);
             sidebarPanelEl === null || sidebarPanelEl === void 0 ? void 0 : sidebarPanelEl.classList.remove(`${ClassNames.SIDEBAR_PANEL_BASE_ANIMATION_IN}--${this.direction}`);
             sidebarEl === null || sidebarEl === void 0 ? void 0 : sidebarEl.classList.add(ClassNames.SIDEBAR_HIDING);
-            sidebarEl === null || sidebarEl === void 0 ? void 0 : sidebarEl.addEventListener('animationend', () => {
+            sidebarPanelEl === null || sidebarPanelEl === void 0 ? void 0 : sidebarPanelEl.addEventListener('animationend', () => {
                 sidebarEl === null || sidebarEl === void 0 ? void 0 : sidebarEl.classList.add(ClassNames.SIDEBAR_HIDDEN);
                 sidebarEl === null || sidebarEl === void 0 ? void 0 : sidebarEl.classList.remove(ClassNames.SIDEBAR_HIDING);
             }, {
