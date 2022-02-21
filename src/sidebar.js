@@ -324,6 +324,7 @@
   bottom: 0;
   max-height: 90%;
   width: 100%;
+  overflow: auto;
 }
 
 .sidebar__panel--top {
@@ -331,6 +332,7 @@
   top: 0;
   max-height: 90%;
   width: 100%;
+  overflow: auto;
 }
 
 .sidebar__panel--left {
