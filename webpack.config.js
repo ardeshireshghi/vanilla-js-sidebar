@@ -6,14 +6,14 @@ module.exports = {
     path: __dirname + '/examples/dist',
     filename: 'bundle.js'
   },
-    module: {
-        rules: [
-            {
-                test: /sidebar.js/,
-                 use: { loader: 'umd-compat-loader' }
-            }
-        ],
-    },
+  module: {
+    rules: [
+      {
+        test: /sidebar.js/,
+        use: { loader: 'umd-compat-loader' }
+      }
+    ]
+  },
   devServer: {
     static: path.join(__dirname, '/examples/dist')
   }
