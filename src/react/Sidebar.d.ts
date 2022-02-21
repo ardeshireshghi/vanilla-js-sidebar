@@ -6,6 +6,7 @@ interface SidebarProps {
     onShow?(): void;
     panelStyles?: Record<string, any>;
     direction?: SidebarDirection;
+    overlayBackgroundColor?: string;
 }
 export declare const Sidebar: React.FC<SidebarProps>;
 export {};

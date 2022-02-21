@@ -8,6 +8,7 @@ interface SidebarProps {
   onShow?(): void;
   panelStyles?: Record<string, any>;
   direction?: SidebarDirection;
+  overlayBackgroundColor?: string;
 }
 
 export const Sidebar: React.FC<SidebarProps> = ({
@@ -16,22 +17,34 @@ export const Sidebar: React.FC<SidebarProps> = ({
   onHide,
   children,
   direction,
+  overlayBackgroundColor,
   panelStyles = {}
 }) => {
   const sidebarContainerRef = useRef<HTMLDivElement>(null);
   const sidebarRef = useRef<SidebarComponent>();
 
   useEffect(() => {
-    if (sidebarContainerRef.current) {
+    if (
+      sidebarContainerRef.current &&
+      !(sidebarRef.current instanceof SidebarComponent)
+    ) {
       sidebarRef.current = new SidebarComponent({
         direction,
         onHide,
         onShow,
+        overlayBackgroundColor,
         panelStyles
       });
       sidebarRef.current.renderContent(sidebarContainerRef.current);
     }
-  }, [sidebarContainerRef, onShow, onHide, direction, panelStyles]);
+  }, [
+    sidebarContainerRef,
+    onShow,
+    onHide,
+    direction,
+    overlayBackgroundColor,
+    panelStyles
+  ]);
 
   useEffect(() => {
     if (sidebarRef.current) {
@@ -41,6 +54,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
         sidebarRef.current.hide();
       }
     }
-  }, [isShown, onHide, sidebarRef]);
+  }, [isShown, sidebarRef]);
   return <div ref={sidebarContainerRef}>{children}</div>;
 };
