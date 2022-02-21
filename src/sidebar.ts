@@ -450,6 +450,7 @@ function createStyles(id: string, sidebarOverlayBackgroundColor: string) {
   bottom: 0;
   max-height: 90%;
   width: 100%;
+  overflow: auto;
 }
 
 .sidebar__panel--top {
@@ -457,6 +458,7 @@ function createStyles(id: string, sidebarOverlayBackgroundColor: string) {
   top: 0;
   max-height: 90%;
   width: 100%;
+  overflow: auto;
 }
 
 .sidebar__panel--left {
