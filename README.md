@@ -52,6 +52,12 @@ This is a Codesandbox example which shows the usage in React:
 
 [React Example](https://codesandbox.io/s/sidebarreact-5gkv6r)
 
+### Loading through adding script tag
+
+Add this right before the closing of `<body>`:
+
+`<script src="https://unpkg.com/@eardi/vanilla-js-sidebar@0.4.1/src/sidebar.js" crossorigin></script>`
+
 ## Running example app locally
 
 ```sh
