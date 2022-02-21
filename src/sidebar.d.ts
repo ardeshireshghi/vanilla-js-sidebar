@@ -45,6 +45,7 @@ declare class Sidebar {
     renderContent(elOrHTMLOrCollection: HTMLElement | HTMLCollection | string): void;
     show(): void;
     hide(): void;
+    destroy(): void;
     _handleTouchStart(e: TouchEvent): void;
     _handleTouchMove(e: TouchEvent): void;
     _renderTemplate(): void;

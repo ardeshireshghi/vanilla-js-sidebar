@@ -47,7 +47,8 @@
             this.direction = direction;
             this.customClassName = customClassName;
             this.panelStyles = panelStyles;
-            this.overlayBackgroundColor = overlayBackgroundColor;
+            this.overlayBackgroundColor =
+                overlayBackgroundColor !== null && overlayBackgroundColor !== void 0 ? overlayBackgroundColor : sidebarDefaultInitialParam.overlayBackgroundColor;
             this.onShow = (initialParam === null || initialParam === void 0 ? void 0 : initialParam.onShow) ? initialParam === null || initialParam === void 0 ? void 0 : initialParam.onShow : () => { };
             this.onHide = (initialParam === null || initialParam === void 0 ? void 0 : initialParam.onHide) ? initialParam === null || initialParam === void 0 ? void 0 : initialParam.onHide : () => { };
             this.state = {
@@ -112,6 +113,16 @@
                 isShown: false
             });
             this.onHide();
+        }
+        destroy() {
+            var _a;
+            const { sidebarEl } = this.state;
+            if (sidebarEl === null || sidebarEl === void 0 ? void 0 : sidebarEl.remove) {
+                sidebarEl === null || sidebarEl === void 0 ? void 0 : sidebarEl.remove();
+            }
+            else {
+                (_a = sidebarEl === null || sidebarEl === void 0 ? void 0 : sidebarEl.parentElement) === null || _a === void 0 ? void 0 : _a.removeChild(sidebarEl);
+            }
         }
         _handleTouchStart(e) {
             this._updateState({
@@ -290,8 +301,9 @@
 }
 
 #${id}-panel.sidebar__panel {
-  background-color: white;
   position: absolute;
+  background-color: white;
+  box-sizing: border-box;
   box-shadow: rgb(67 90 111 / 30%) 0px 0px 1px,
     rgb(67 90 111 / 47%) 0px 16px 24px -8px;
 

@@ -77,7 +77,9 @@ class Sidebar {
     this.direction = direction;
     this.customClassName = customClassName;
     this.panelStyles = panelStyles;
-    this.overlayBackgroundColor = overlayBackgroundColor;
+    this.overlayBackgroundColor =
+      overlayBackgroundColor ??
+      sidebarDefaultInitialParam.overlayBackgroundColor;
 
     this.onShow = initialParam?.onShow ? initialParam?.onShow : () => {};
     this.onHide = initialParam?.onHide ? initialParam?.onHide : () => {};
@@ -171,6 +173,17 @@ class Sidebar {
 
     this.onHide();
   }
+
+  destroy() {
+    const { sidebarEl } = this.state;
+
+    if (sidebarEl?.remove) {
+      sidebarEl?.remove();
+    } else {
+      sidebarEl?.parentElement?.removeChild(sidebarEl);
+    }
+  }
+
   _handleTouchStart(e: TouchEvent) {
     this._updateState({
       touchStartPosition: {
@@ -414,8 +427,9 @@ function createStyles(id: string, sidebarOverlayBackgroundColor: string) {
 }
 
 #${id}-panel.sidebar__panel {
-  background-color: white;
   position: absolute;
+  background-color: white;
+  box-sizing: border-box;
   box-shadow: rgb(67 90 111 / 30%) 0px 0px 1px,
     rgb(67 90 111 / 47%) 0px 16px 24px -8px;
 
