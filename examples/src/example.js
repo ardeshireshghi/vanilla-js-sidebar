@@ -1,4 +1,8 @@
+import React from 'react';
+import { render } from 'react-dom';
+
 import Sidebar from '../../src/sidebar';
+import ReactSidebarContainer from './react-example';
 
 const sidebarContent = `<div class="sidebar-content">
     <h1>Hello! I am a sidebar</h1>
@@ -45,3 +49,7 @@ const sidebarOverlay = new Sidebar({
 sidebarOverlay.renderContent(sidebarContent);
 document.querySelector('.js-sidebar-overlay').onclick = () =>
   sidebarOverlay.show();
+
+// React Sidebar render
+const rootElement = document.getElementById('react-root');
+render(React.createElement(ReactSidebarContainer), rootElement);

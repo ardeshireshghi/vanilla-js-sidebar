@@ -1,4 +1,6 @@
 const path = require('path');
+const webpack = require('webpack');
+
 module.exports = {
   mode: 'none',
   entry: './examples/src/example.js',
@@ -9,12 +11,19 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /sidebar.js/,
+        test: /(sidebar|Sidebar|react-example).js/,
         use: { loader: 'umd-compat-loader' }
       }
     ]
   },
   devServer: {
     static: path.join(__dirname, '/examples/dist')
-  }
+  },
+  plugins: [
+    // fix "process is not defined" error:
+    // (do "npm install process" before running the build)
+    new webpack.ProvidePlugin({
+      process: 'process/browser'
+    })
+  ]
 };
