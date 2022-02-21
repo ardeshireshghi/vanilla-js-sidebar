@@ -46,9 +46,9 @@ sidebar.renderContent(sidebarContent || sidebarContentElement);
 buttonSelector.onclick = () => sidebar.show();
 ```
 
-### Use in React
+### Use with React
 
-This is a Codesandbox example which shows the usage in React. We will write a proper React wrapper soon:
+This is a Codesandbox example which shows the usage in React:
 
 [React Example](https://codesandbox.io/s/sidebarreact-5gkv6r)
 
