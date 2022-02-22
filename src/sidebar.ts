@@ -55,7 +55,7 @@ const sidebarDefaultInitialParam = Object.freeze({
   overlayBackgroundColor: 'rgba(65, 68, 92, 0.51)'
 });
 
-const SIDEBAR_TOUCH_HIDE_THRESHOLD = 25;
+const SIDEBAR_TOUCH_HIDE_THRESHOLD = 100;
 
 class Sidebar {
   public direction: SidebarDirection;
@@ -199,6 +199,8 @@ class Sidebar {
     }
 
     this.touchMoveDebounceTimeout = setTimeout(() => {
+      const { sidebarPanelEl } = this.state;
+
       const diff = {
         x: e.touches[0].clientX - (this.state.touchStartPosition?.x || 0),
         y: e.touches[0].clientY - (this.state.touchStartPosition?.y || 0)

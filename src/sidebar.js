@@ -40,7 +40,7 @@
         panelStyles: {},
         overlayBackgroundColor: 'rgba(65, 68, 92, 0.51)'
     });
-    const SIDEBAR_TOUCH_HIDE_THRESHOLD = 25;
+    const SIDEBAR_TOUCH_HIDE_THRESHOLD = 100;
     class Sidebar {
         constructor(initialParam) {
             const { direction, customClassName, panelStyles, overlayBackgroundColor } = Object.assign(Object.assign({}, sidebarDefaultInitialParam), initialParam);
@@ -138,6 +138,7 @@
             }
             this.touchMoveDebounceTimeout = setTimeout(() => {
                 var _a, _b;
+                const { sidebarPanelEl } = this.state;
                 const diff = {
                     x: e.touches[0].clientX - (((_a = this.state.touchStartPosition) === null || _a === void 0 ? void 0 : _a.x) || 0),
                     y: e.touches[0].clientY - (((_b = this.state.touchStartPosition) === null || _b === void 0 ? void 0 : _b.y) || 0)
